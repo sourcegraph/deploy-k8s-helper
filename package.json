@@ -11,10 +11,10 @@
 	},
 	"devDependencies": {
 		"@types/node": "latest",
-		"opn-cli": "^4.0.0",
-		"prettier": "^1.16.4",
-		"tslint": "^5.12.1",
-		"tslint-config-prettier": "^1.18.0"
+		"opn-cli": "4.0.0",
+		"prettier": "1.16.4",
+		"tslint": "5.12.1",
+		"tslint-config-prettier": "1.18.0"
 	},
 	"dependencies": {
 		"@pulumi/gcp": "latest",
