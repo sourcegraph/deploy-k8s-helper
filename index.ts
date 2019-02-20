@@ -8,7 +8,7 @@ import { gcloudConfig } from './config';
 const clusterAdmin = new k8s.rbac.v1.ClusterRoleBinding(
 	'cluster-admin-role-binding',
 	{
-		metadata: { name: `${os.userInfo().username}-admin-role-binding` },
+		metadata: { name: `${os.userInfo().username}-cluster-admin-role-binding` },
 
 		roleRef: {
 			apiGroup: 'rbac.authorization.k8s.io',
@@ -55,7 +55,7 @@ const ingressNginx = new k8s.yaml.ConfigGroup(
 	{
 		files: `${deployCheckout}/configure/ingress-nginx/**/*.yaml`
 	},
-	{ providers: { kubernetes: k8sProvider } }
+	{ providers: { kubernetes: k8sProvider }, dependsOn: clusterAdmin }
 );
 
 export const ingressIPs = ingressNginx
