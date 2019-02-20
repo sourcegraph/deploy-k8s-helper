@@ -21,6 +21,7 @@ const cluster = new gcp.container.Cluster(name, {
 	zone: gcloudConfig.zone,
 
 	nodeConfig: {
+		diskType: 'pd-ssd',
 		localSsdCount: 1,
 		machineType: clusterConfig.machineType,
 
