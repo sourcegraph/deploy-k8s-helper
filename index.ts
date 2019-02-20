@@ -1,79 +1,65 @@
-import * as gcp from '@pulumi/gcp';
-import * as pulumi from '@pulumi/pulumi';
 import * as os from 'os';
-import { clusterConfig } from './config';
-import { URL } from 'url';
 
-const cluster = new gcp.container.Cluster(clusterConfig.name || `${os.userInfo().username}-sourcegraph-test`, {
-	// Don't auto-generate a name if the user explicitly defined one.
-	name: clusterConfig.name,
+import * as k8s from '@pulumi/kubernetes';
 
-	description: 'Scratch cluster used for testing sourcegraph/deploy-sourcegraph',
+import { k8sProvider } from './cluster';
+import { gcloudConfig } from './config';
 
-	initialNodeCount: clusterConfig.nodeCount,
-	project: clusterConfig.project,
-	zone: clusterConfig.zone,
+const clusterAdmin = new k8s.rbac.v1.ClusterRoleBinding(
+	'cluster-admin-role-binding',
+	{
+		metadata: { name: `${os.userInfo().username}-admin-role-binding` },
 
-	nodeConfig: {
-		localSsdCount: 1,
-		machineType: clusterConfig.machineType,
+		roleRef: {
+			apiGroup: 'rbac.authorization.k8s.io',
+			kind: 'ClusterRole',
+			name: 'cluster-admin'
+		},
 
-		oauthScopes: [
-			'https://www.googleapis.com/auth/compute',
-			'https://www.googleapis.com/auth/devstorage.read_only',
-			'https://www.googleapis.com/auth/logging.write',
-			'https://www.googleapis.com/auth/monitoring'
-		]
-	}
-});
+		subjects: [ { apiGroup: 'rbac.authorization.k8s.io', kind: 'User', name: gcloudConfig.username } ]
+	},
+	{ provider: k8sProvider }
+);
 
-export const clusterName = cluster.name;
-export const clusterZone = cluster.zone;
-export const clusterProject = cluster.project;
+const storageClass = new k8s.storage.v1.StorageClass(
+	'sourcegraph-storage-class',
+	{
+		metadata: {
+			name: 'sourcegraph',
 
-export const clusterContext = pulumi
-	.all([ clusterName, clusterZone, clusterProject ])
-	.apply(([ name, zone, project ]) => `gke_${project}_${zone}_${name}`);
+			labels: {
+				deploy: 'sourcegraph'
+			}
+		},
+		provisioner: 'kubernetes.io/gce-pd',
 
-export const kubeconfig = pulumi
-	.all([ clusterContext, cluster.endpoint, cluster.masterAuth ])
-	.apply(([ context, endpoint, masterAuth ]) => {
-		return `apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority-data: ${masterAuth.clusterCaCertificate}
-    server: https://${endpoint}
-  name: ${context}
-contexts:
-- context:
-    cluster: ${context}
-    user: ${context}
-  name: ${context}
-current-context: ${context}
-kind: Config
-preferences: {}
-users:
-- name: ${context}
-  user:
-    auth-provider:
-      config:
-        cmd-args: config config-helper --format=json
-        cmd-path: gcloud
-        expiry-key: '{.credential.token_expiry}'
-        token-key: '{.credential.access_token}'
-      name: gcp
-`;
-	});
+		parameters: {
+			type: 'pd-ssd'
+		}
+	},
+	{ provider: k8sProvider }
+);
 
-export const gcloudAuthCommand = pulumi
-	.all([ clusterName, clusterZone, clusterProject ])
-	.apply(
-		([ name, zone, project ]) =>
-			`gcloud container clusters get-credentials ${name} --zone ${zone} --project ${project}`
-	);
+const deployCheckout = '/Users/ggilmore/dev/go/src/github.com/sourcegraph/deploy';
 
-export const gcpURL = pulumi.all([ clusterName, clusterZone, clusterProject ]).apply(([ name, zone, project ]) => {
-	const url = new URL(`${zone}/${name}`, 'https://console.cloud.google.com/kubernetes/clusters/details/');
-	url.searchParams.set('project', project);
-	return url.toString();
-});
+const baseDeployment = new k8s.yaml.ConfigGroup(
+	'base',
+	{
+		files: `${deployCheckout}/base/**/*.yaml`
+	},
+	{ providers: { kubernetes: k8sProvider }, dependsOn: [ clusterAdmin, storageClass ] }
+);
+
+const ingressNginx = new k8s.yaml.ConfigGroup(
+	'ingress-nginx',
+	{
+		files: `${deployCheckout}/configure/ingress-nginx/**/*.yaml`
+	},
+	{ providers: { kubernetes: k8sProvider } }
+);
+
+export const ingressIPs = ingressNginx
+	.getResource('v1/Service', 'ingress-nginx', 'ingress-nginx')
+	.apply((svc) => svc.status.apply((status) => status.loadBalancer.ingress.map((i) => i.ip)));
+
+export * from './cluster';

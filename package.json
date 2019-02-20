@@ -18,6 +18,8 @@
 	},
 	"dependencies": {
 		"@pulumi/gcp": "latest",
-		"@pulumi/pulumi": "latest"
+		"@pulumi/kubernetes": "^0.20.2",
+		"@pulumi/pulumi": "latest",
+		"fast-glob": "^2.2.6"
 	}
 }

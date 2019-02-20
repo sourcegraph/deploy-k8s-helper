@@ -3,5 +3,4 @@ config:
   cluster:nodeCount: "4"
   gcp:project: sourcegraph-server
   gcp:zone: us-central1-a
-  sg-deploy-pulumi-scratch:machineType: n1-standard-8
-  sg-deploy-pulumi-scratch:nodeCount: "3"
+  sg-deploy-k8s-helper:gcloudEmail: geoffrey@sourcegraph.com
