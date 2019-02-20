@@ -4,11 +4,11 @@ import * as pulumi from '@pulumi/pulumi';
 const config = new pulumi.Config();
 
 export const clusterConfig = {
-	name: config.get('cluster:name'),
+	name: config.get('clusterName'),
 
-	nodeCount: config.getNumber('cluster:nodeCount') || 4,
+	nodeCount: config.getNumber('nodeCount') || 4,
 
-	machineType: config.get('cluster:machineType') || 'n1-standard-8'
+	machineType: config.get('machineType') || 'n1-standard-8'
 };
 
 export const gcloudConfig = {
