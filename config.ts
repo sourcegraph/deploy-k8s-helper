@@ -18,3 +18,5 @@ export const gcloudConfig = {
 
 	username: config.require('gcloudEmail')
 };
+
+export const deploySourcegraphRoot = config.require('deploySourcegraphRoot');

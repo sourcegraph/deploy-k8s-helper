@@ -1,9 +1,10 @@
 import * as os from 'os';
+import * as path from 'path';
 
 import * as k8s from '@pulumi/kubernetes';
 
 import { k8sProvider } from './cluster';
-import { gcloudConfig } from './config';
+import { deploySourcegraphRoot, gcloudConfig } from './config';
 
 const clusterAdmin = new k8s.rbac.v1.ClusterRoleBinding(
 	'cluster-admin-role-binding',
@@ -40,12 +41,10 @@ const storageClass = new k8s.storage.v1.StorageClass(
 	{ provider: k8sProvider }
 );
 
-const deployCheckout = '/Users/ggilmore/dev/go/src/github.com/sourcegraph/deploy';
-
 const baseDeployment = new k8s.yaml.ConfigGroup(
 	'base',
 	{
-		files: `${deployCheckout}/base/**/*.yaml`
+		files: `${path.posix.join(deploySourcegraphRoot, 'base')}/**/*.yaml`
 	},
 	{ providers: { kubernetes: k8sProvider }, dependsOn: [ clusterAdmin, storageClass ] }
 );
@@ -53,7 +52,7 @@ const baseDeployment = new k8s.yaml.ConfigGroup(
 const ingressNginx = new k8s.yaml.ConfigGroup(
 	'ingress-nginx',
 	{
-		files: `${deployCheckout}/configure/ingress-nginx/**/*.yaml`
+		files: `${path.posix.join(deploySourcegraphRoot, 'configure', 'ingress-nginx')}/**/*.yaml`
 	},
 	{ providers: { kubernetes: k8sProvider }, dependsOn: clusterAdmin }
 );
