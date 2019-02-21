@@ -13,7 +13,7 @@ A small helper program to aid in creating a test cluster for https://github.com/
 
 ### Configuration
 
-See [config.ts](config.ts) for more information, but you must set the following configuration values via `pulumi config set <NAME> <VALUE>`
+See [config.ts](config.ts) for more information, but you **must** set the following configuration values via `pulumi config set <NAME> <VALUE>`
 
 - `gcloudEmail` -  The email that you use to sign in to our GCP project.
     - example: geoffrey@sourcegraph.com
