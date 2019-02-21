@@ -10,7 +10,7 @@ A small helper program to aid in creating a test cluster for https://github.com/
 - GCP access to the ["Sourcegraph Auxiliary" (sourcegraph-dev) GCP project](https://console.cloud.google.com/kubernetes/list?project=sourcegraph-server)
     - Run `gcloud auth application-default login` to fetch the necessary credentials for Pulumi to use 
 - https://github.com/sourcegraph/deploy-sourcegraph checked out on your local machine
-    - This program reads the contents of that directory. Make sure your that your checkout is up-to-date!
+    - deploy-k8s-helper reads the contents of that directory. Make sure your that your checkout is up-to-date!
 
 ### Configuration
 
