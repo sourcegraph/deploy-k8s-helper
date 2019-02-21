@@ -10,7 +10,7 @@ import { clusterConfig, gcloudConfig } from './config';
 const name = clusterConfig.name || `${os.userInfo().username}-sourcegraph-test`;
 
 const cluster = new gcp.container.Cluster(name, {
-	// Don't auto-generate a name if the user explicitly defined one.
+	// Don't auto-generate a name iff the user explicitly defined one.
 	name: clusterConfig.name,
 
 	description: 'Scratch cluster used for testing sourcegraph/deploy-sourcegraph',
