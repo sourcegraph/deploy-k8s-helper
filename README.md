@@ -22,6 +22,8 @@ See [config.ts](config.ts) for more information, but you must set the following 
 
 ## Usage 
 
+Run `yarn` so that you install all the necessary dependencies. 
+
 - `yarn up`: creates a new GKE cluster and fetches the necessary credentials
 - `yarn destroy`: creates a GKE cluster that was previously created with `yarn up`
 - `yarn web`: opens the GCP page for your cluster in your webrowser
