@@ -64,12 +64,12 @@
     "@types/express" "^4.16.0"
     read-package-json "^2.0.13"
 
-"@pulumi/kubernetes@0.20.3":
-  version "0.20.3"
-  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-0.20.3.tgz#ceb7bcede833bb62783230cd08341ff81ba8c057"
-  integrity sha512-8ZbDuDKZaHp7TWBBurWYStwb5je2C1VEVDJRJis8qju679DO8VQowIr9PSBV3AJJBlrvIM5A4Kg/M8+oDhfZqQ==
+"@pulumi/kubernetes@0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-0.21.0.tgz#c8695d145a1097a79dbb13f33393a0d169f7e2ef"
+  integrity sha512-FZABYM+4dgGU7FRBa3pvMdioWhGKE77xDl/PpNayAWrXFZBJSI1gYzU/EPeb7WeJHO2FVwuN1pZ+UhKfSAgusw==
   dependencies:
-    "@pulumi/pulumi" "^0.16.14"
+    "@pulumi/pulumi" "^0.17.1"
     "@types/glob" "^5.0.35"
     "@types/js-yaml" "^3.11.2"
     "@types/node-fetch" "^2.1.4"
@@ -84,6 +84,23 @@
   version "0.16.14"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-0.16.14.tgz#b8a569a364e46560db0942ac02fe65e3e2288abc"
   integrity sha512-/tPH0CYe/jig28aAkkt9kdb6isXJ98yfRTv0qj13pZGg3t214JGvEz6KEy0Os6StnsXoSjpxGQIMXhDN4KYH+Q==
+  dependencies:
+    google-protobuf "^3.5.0"
+    grpc "^1.12.2"
+    minimist "^1.2.0"
+    normalize-package-data "^2.4.0"
+    protobufjs "^6.8.6"
+    read-package-tree "^5.2.1"
+    require-from-string "^2.0.1"
+    source-map-support "^0.4.16"
+    ts-node "^7.0.0"
+    typescript "^3.0.0"
+    upath "^1.1.0"
+
+"@pulumi/pulumi@^0.17.1":
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-0.17.1.tgz#a481cff714ca7b577b4ea8d57da0e43d4f464131"
+  integrity sha512-/cvbZUKtB8g5yQkdnMXjC5aP/IqO2dXxgEXam9sEmGIKz7cAhrsTmVWxhrHBlp6D1Dl5DNaqZjXPIooX6vF5Cw==
   dependencies:
     google-protobuf "^3.5.0"
     grpc "^1.12.2"
