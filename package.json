@@ -1,24 +1,24 @@
 {
-	"name": "sg-deploy-k8s-helper",
-	"scripts": {
-		"up": "pulumi up",
-		"postup": "yarn auth",
-		"destroy": "pulumi destroy",
-		"predestroy": "yarn deauth",
-		"auth": "$(pulumi stack output gcloudAuthCommand)",
-		"deauth": "kubectl config delete-context $(pulumi stack output clusterContext)",
-		"web": "opn $(pulumi stack output gcpURL)"
-	},
-	"devDependencies": {
-		"@types/node": "latest",
-		"opn-cli": "4.0.0",
-		"prettier": "1.16.4",
-		"tslint": "5.15.0",
-		"tslint-config-prettier": "1.18.0"
-	},
-	"dependencies": {
-		"@pulumi/gcp": "latest",
-		"@pulumi/kubernetes": "0.22.0",
-		"@pulumi/pulumi": "latest"
-	}
+  "name": "sg-deploy-k8s-helper",
+  "scripts": {
+    "up": "pulumi up",
+    "postup": "yarn auth",
+    "destroy": "pulumi destroy",
+    "predestroy": "yarn deauth",
+    "auth": "$(pulumi stack output gcloudAuthCommand)",
+    "deauth": "kubectl config delete-context $(pulumi stack output clusterContext)",
+    "web": "opn $(pulumi stack output gcpURL)"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "opn-cli": "4.0.0",
+    "prettier": "1.16.4",
+    "tslint": "5.15.0",
+    "tslint-config-prettier": "1.18.0"
+  },
+  "dependencies": {
+    "@pulumi/gcp": "0.18.3",
+    "@pulumi/kubernetes": "0.22.0",
+    "@pulumi/pulumi": "0.17.5"
+  }
 }

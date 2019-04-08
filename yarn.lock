@@ -55,12 +55,12 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@pulumi/gcp@latest":
-  version "0.16.8"
-  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-0.16.8.tgz#2a629057a523b3cc6d2250299a0d4c8671e1312f"
-  integrity sha512-cYhGsUk6tDJd93FUK3YnCGvyDMaxWAXWtKpsTu3Nx/O3DX0CUo4MgocDC6mMdyxITkm4i5O7GOzrnMBG6vS1NQ==
+"@pulumi/gcp@0.18.3":
+  version "0.18.3"
+  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-0.18.3.tgz#5c13376c93e92dcbf9e09c1e22c8155fcf9535a8"
+  integrity sha512-21e1ejbG4wKQ/c+V5YZYn3LVsNT3zvHWE/O08NXgRRR4pF1bqqm6wbDWNLkoUfz+nmRwozNg2lVB0LdlBlZ25Q==
   dependencies:
-    "@pulumi/pulumi" "^0.16.14"
+    "@pulumi/pulumi" "^0.17.4"
     "@types/express" "^4.16.0"
     read-package-json "^2.0.13"
 
@@ -80,10 +80,10 @@
     shell-quote "^1.6.1"
     tmp "^0.0.33"
 
-"@pulumi/pulumi@^0.16.14", "@pulumi/pulumi@latest":
-  version "0.16.14"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-0.16.14.tgz#b8a569a364e46560db0942ac02fe65e3e2288abc"
-  integrity sha512-/tPH0CYe/jig28aAkkt9kdb6isXJ98yfRTv0qj13pZGg3t214JGvEz6KEy0Os6StnsXoSjpxGQIMXhDN4KYH+Q==
+"@pulumi/pulumi@0.17.5", "@pulumi/pulumi@^0.17.4":
+  version "0.17.5"
+  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-0.17.5.tgz#1990e321958932efbbdb0353fbaf8e35d8a19d48"
+  integrity sha512-j/+73GcxcYKyjadO7X32AB8d6knMyipnW8hJDijA1HGB4G8gnXP6Z3l9QOKlp28gGolEkKqFdUFg9YU5l0z42Q==
   dependencies:
     google-protobuf "^3.5.0"
     grpc "^1.12.2"
