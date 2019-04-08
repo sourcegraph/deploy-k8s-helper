@@ -64,10 +64,10 @@
     "@types/express" "^4.16.0"
     read-package-json "^2.0.13"
 
-"@pulumi/kubernetes@0.21.1":
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-0.21.1.tgz#a6478d46985730a0d71a96109a68dded7f35aaa2"
-  integrity sha512-+D+oAumfMI8SyMzUSaPzlhCg9ZE+dB1qUXrlatsUud8Ova+xQpg09RrLTqG5sc3wmHqTa/MPoW2STiTv63VN4A==
+"@pulumi/kubernetes@0.22.0":
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-0.22.0.tgz#f774dc1b3b30fa87bdcc62b3313eda74b09ad579"
+  integrity sha512-FYvwA8WM5f2BMEMjyHz7z6Fiw1/ZWZj4w0XBanXPh1a0sgVKEZBUuDaEu8JQHx0HAL2k4EVwjgf+BavG63e6/A==
   dependencies:
     "@pulumi/pulumi" "^0.17.1"
     "@types/glob" "^5.0.35"
