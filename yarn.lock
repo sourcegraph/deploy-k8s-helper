@@ -131,6 +131,11 @@
     typescript "^3.0.0"
     upath "^1.1.0"
 
+"@sourcegraph/prettierrc@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@sourcegraph/prettierrc/-/prettierrc-2.2.0.tgz#af4a6fcd465b0a39a07ffbd8f2d3414d01e603e8"
+  integrity sha512-kRdHxdAppxYnN7qAQjNTyuG05pjYHFtEUquZauXVXBeaGB4sye3uSkb8wgi34jeaUHG/gWp2f5hQgCCBMizjjA==
+
 "@types/body-parser@*":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
