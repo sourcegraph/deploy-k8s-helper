@@ -28,3 +28,27 @@ Run `yarn` so that you install all the necessary dependencies.
 - `yarn up`: creates a new GKE cluster and fetches the necessary credentials
 - `yarn destroy`: deletes a GKE cluster that was previously created with `yarn up`
 - `yarn web`: opens the GCP page for your cluster in your webrowser
+
+## Troubleshooting
+
+### The zone '...' doesn't have enough resources to fulfill the request
+
+Example:
+
+```
+Do you want to perform this update? yes
+Updating (dev):
+
+     Type                      Name                       Status                  Info
+ +   pulumi:pulumi:Stack       sg-deploy-k8s-helper-dev   **creating failed**     1 error
+ +   └─ gcp:container:Cluster  geoffrey-sourcegraph-test  **creating failed**     1 error
+
+Diagnostics:
+  pulumi:pulumi:Stack (sg-deploy-k8s-helper-dev):
+    error: update failed
+
+  gcp:container:Cluster (geoffrey-sourcegraph-test):
+    error: Plan apply failed: Error waiting for creating GKE cluster: Deploy error: Not all instances running in IGM after 46.650887217s. Expect 4. Current errors: [ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS]: Instance 'gke-geoffrey-sourcegraph-default-pool-7f493867-0bmt' creation failed: The zone 'projects/sourcegraph-server/zones/us-central1-a' does not have enough resources available to fulfill the request.  '(resource type:compute)'. - ; .
+```
+
+Solution: Pick another zone to use from https://cloud.google.com/compute/docs/regions-zones/#available. Set it in your stack configuration by running `pulumi config set gcp:zone [NEW_ZONE]`
