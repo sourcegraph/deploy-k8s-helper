@@ -27,6 +27,7 @@ Run `yarn` so that you install all the necessary dependencies.
 
 - `yarn up`: creates a new GKE cluster and fetches the necessary credentials
 - `yarn destroy`: deletes a GKE cluster that was previously created with `yarn up`
+- `yarn auth`: fetch the credentials so that kubectl can speak to the cluster
 - `yarn web`: opens the GCP page for your cluster in your webrowser
 
 ## Troubleshooting
