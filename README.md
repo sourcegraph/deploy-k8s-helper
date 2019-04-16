@@ -54,3 +54,22 @@ Diagnostics:
 ```
 
 Solution: Pick another zone to use from https://cloud.google.com/compute/docs/regions-zones/#available. Set it in your stack configuration by running `pulumi config set gcp:zone [NEW_ZONE]`
+
+### (ingress-nginx) Cannot read property 'status' of undefined
+
+This happens if you're trying to deploy a 3.x release of https://github.com/sourcegraph/deploy-sourcegraph/ (which didn't have `nginx-ingress`. 
+
+Example:
+
+```
+Diagnostics:
+  pulumi:pulumi:Stack (sg-deploy-k8s-helper-dev):
+    error: Running program '/Users/ggilmore/dev/go/src/github.com/sourcegraph/ds-k8s-helper' failed with an unhandled exception:
+    TypeError: Cannot read property 'status' of undefined
+        at exports.ingressIPs.ingressNginx.getResource.apply.svc (/Users/ggilmore/dev/go/src/github.com/sourcegraph/ds-k8s-helper/index.ts:49:23)
+        at OutputImpl.<anonymous> (/Users/ggilmore/dev/go/src/github.com/sourcegraph/ds-k8s-helper/node_modules/@pulumi/kubernetes/node_modules/@pulumi/pulumi/output.js:102:47)
+        at Generator.next (<anonymous>)
+        at fulfilled (/Users/ggilmore/dev/go/src/github.com/sourcegraph/ds-k8s-helper/node_modules/@pulumi/kubernetes/node_modules/@pulumi/pulumi/output.js:17:58)
+```
+
+Solution: Comment out the `const ingressNginx` and `export const ingressIPs` variables in https://github.com/sourcegraph/deploy-k8s-helper/blob/master/index.ts : https://github.com/sourcegraph/deploy-k8s-helper/blob/87bce4bb4f4448336a5b7feabca23bf1747b9fda/index.ts#L61-L72
