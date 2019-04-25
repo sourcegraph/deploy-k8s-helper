@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@sourcegraph/prettierrc": "2.2.0",
+    "@types/js-yaml": "^3.12.1",
     "@types/node": "latest",
     "opn-cli": "4.1.0",
     "prettier": "1.17.0",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@pulumi/gcp": "0.18.4",
     "@pulumi/kubernetes": "0.22.2",
-    "@pulumi/pulumi": "0.17.8"
+    "@pulumi/pulumi": "0.17.8",
+    "js-yaml": "^3.13.1"
   }
 }
