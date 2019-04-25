@@ -15,10 +15,24 @@ const cluster = new gcp.container.Cluster(name, {
 
     description: 'Scratch cluster used for testing sourcegraph/deploy-sourcegraph',
 
-    initialNodeCount: clusterConfig.nodeCount,
-
     location: gcloudConfig.zone,
     project: gcloudConfig.project,
+})
+
+const nodePool = new gcp.container.NodePool(`${name}-node-pool`, {
+    name: `${name}-node-pool`,
+
+    cluster: cluster.name,
+
+    location: cluster.zone,
+    project: cluster.project,
+
+    initialNodeCount: clusterConfig.nodeCount,
+
+    management: {
+        autoRepair: true,
+        autoUpgrade: true,
+    },
 
     nodeConfig: {
         diskType: 'pd-ssd',
