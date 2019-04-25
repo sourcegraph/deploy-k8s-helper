@@ -18,6 +18,7 @@ const cluster = new gcp.container.Cluster(name, {
     location: gcloudConfig.zone,
     project: gcloudConfig.project,
 
+    initialNodeCount: 1,
     removeDefaultNodePool: true,
 })
 
