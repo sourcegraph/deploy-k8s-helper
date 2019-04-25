@@ -57,7 +57,7 @@ Solution: Pick another zone to use from https://cloud.google.com/compute/docs/re
 
 ### (ingress-nginx) Cannot read property 'status' of undefined
 
-This happens if you're trying to deploy a 3.x release of https://github.com/sourcegraph/deploy-sourcegraph/ (which didn't have `nginx-ingress`. 
+This happens if you're trying to deploy a pre-`3.x` release of https://github.com/sourcegraph/deploy-sourcegraph/ (which didn't have `nginx-ingress`). 
 
 Example:
 
