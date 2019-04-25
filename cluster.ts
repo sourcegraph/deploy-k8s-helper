@@ -17,6 +17,8 @@ const cluster = new gcp.container.Cluster(name, {
 
     location: gcloudConfig.zone,
     project: gcloudConfig.project,
+
+    removeDefaultNodePool: true,
 })
 
 const nodePool = new gcp.container.NodePool(`${name}-node-pool`, {
