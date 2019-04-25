@@ -7,27 +7,27 @@ import * as yaml from 'js-yaml'
 import { k8sProvider } from './cluster'
 import { deploySourcegraphRoot, gcloudConfig } from './config'
 
-// const clusterAdmin = new k8s.rbac.v1.ClusterRoleBinding(
-//     'cluster-admin-role-binding',
-//     {
-//         metadata: { name: `${os.userInfo().username}-cluster-admin-role-binding` },
+const clusterAdmin = new k8s.rbac.v1.ClusterRoleBinding(
+    'cluster-admin-role-binding',
+    {
+        metadata: { name: `${os.userInfo().username}-cluster-admin-role-binding` },
 
-//         roleRef: {
-//             apiGroup: 'rbac.authorization.k8s.io',
-//             kind: 'ClusterRole',
-//             name: 'cluster-admin',
-//         },
+        roleRef: {
+            apiGroup: 'rbac.authorization.k8s.io',
+            kind: 'ClusterRole',
+            name: 'cluster-admin',
+        },
 
-//         subjects: [
-//             {
-//                 apiGroup: 'rbac.authorization.k8s.io',
-//                 kind: 'User',
-//                 name: gcloudConfig.username,
-//             },
-//         ],
-//     },
-//     { provider: k8sProvider }
-// )
+        subjects: [
+            {
+                apiGroup: 'rbac.authorization.k8s.io',
+                kind: 'User',
+                name: gcloudConfig.username,
+            },
+        ],
+    },
+    { provider: k8sProvider }
+)
 
 // const storageClass = new k8s.storage.v1.StorageClass(
 //     'sourcegraph-storage-class',
@@ -172,6 +172,7 @@ const sourcegraph = new k8s.helm.v2.Chart(
     },
     {
         providers: { kubernetes: k8sProvider },
+        dependsOn: clusterAdmin,
     }
 )
 
