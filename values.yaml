@@ -60,13 +60,15 @@ cluster:
     #   beta.kubernetes.io/instance-type: i3.4xlarge
     replicas: 4
 site:
-  appURL: https://sourcegraph.lyft.net
-  auth.provider: saml
-  auth.saml:
-    identityProviderMetadataURL: http://saml-metadata/saml-metadata.xml
-    serviceProviderCertificate: REDACTED
-    serviceProviderPrivateKey: REDACTED
-    type: ""
+  # appURL: https://sourcegraph.lyft.net
+  appURL: http://localhost:3080
+  # auth.provider: saml
+  # auth.saml:
+  #   identityProviderMetadataURL: http://saml-metadata/saml-metadata.xml
+  #   serviceProviderCertificate: REDACTED
+  #   serviceProviderPrivateKey: REDACTED
+  #   type: ""
+  auth.providers: [{"type": "builtin", "allowSignup": false}]
   experimentalFeatures: {}
   gitMaxConcurrentClones: 3
   github:

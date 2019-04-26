@@ -1,5 +1,5 @@
 config:
   gcp:project: sourcegraph-server
   gcp:zone: us-central1-a
-  sg-deploy-k8s-helper:machineType: n1-standard-8
-  sg-deploy-k8s-helper:nodeCount: "4"
+  sg-deploy-k8s-helper:machineType: n1-standard-16
+  sg-deploy-k8s-helper:nodeCount: '5'
