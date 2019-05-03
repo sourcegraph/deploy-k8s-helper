@@ -48,3 +48,7 @@ export const gcloudConfig = {
  * Example: /Users/ggilmore/dev/go/src/github.com/sourcegraph/deploy-sourcegraph
  */
 export const deploySourcegraphRoot = config.require('deploySourcegraphRoot')
+
+export const certificate = config.require('certificate')
+export const key = config.require('key')
+export const htpassword = config.require('htpassword')
