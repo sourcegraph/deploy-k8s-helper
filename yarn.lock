@@ -96,24 +96,7 @@
     shell-quote "^1.6.1"
     tmp "^0.0.33"
 
-"@pulumi/pulumi@0.17.13":
-  version "0.17.13"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-0.17.13.tgz#361a319ecb169ae0e295881af94f1c0c1d7985a7"
-  integrity sha512-C7n2Defy97iKHJCvh5X8sjLgoHW0feCkw9TLiPSwNJ5HDkOc9Sud5hjMLlHOvGHP9bfOqPsrg+GkLmgohWnj2A==
-  dependencies:
-    google-protobuf "^3.5.0"
-    grpc "^1.20.2"
-    minimist "^1.2.0"
-    normalize-package-data "^2.4.0"
-    protobufjs "^6.8.6"
-    read-package-tree "^5.2.1"
-    require-from-string "^2.0.1"
-    source-map-support "^0.4.16"
-    ts-node "^7.0.0"
-    typescript "^3.4.1"
-    upath "^1.1.0"
-
-"@pulumi/pulumi@^0.17.18":
+"@pulumi/pulumi@0.17.22", "@pulumi/pulumi@^0.17.18":
   version "0.17.22"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-0.17.22.tgz#fcd598fb00a205313b292268fb9c25335a56baaa"
   integrity sha512-sfKLUAxaU9xYsDLDu3AKW7Mqx02nMlUeWXIUsrGDY+P4hIYmAOoPU2yFRRB8/7mzmvZQgIMSkwBSZfpFBaFA2g==
@@ -1542,11 +1525,6 @@ typescript@^3.0.0:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3.tgz#f1657fc7daa27e1a8930758ace9ae8da31403221"
   integrity sha512-Y21Xqe54TBVp+VDSNbuDYdGw0BpoR/Q6wo/+35M8PAU0vipahnyduJWirxxdxjsAkS7hue53x2zp8gz7F05u0A==
-
-typescript@^3.4.1:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
-  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
 
 upath@^1.1.0:
   version "1.1.0"
