@@ -18,7 +18,7 @@
     "tslint-config-prettier": "1.18.0"
   },
   "dependencies": {
-    "@pulumi/gcp": "0.18.12",
+    "@pulumi/gcp": "0.18.16",
     "@pulumi/kubernetes": "0.25.2",
     "@pulumi/pulumi": "0.17.28"
   }
