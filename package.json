@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@pulumi/gcp": "0.18.16",
-    "@pulumi/kubernetes": "0.25.6",
+    "@pulumi/kubernetes": "1.0.0-beta.1",
     "@pulumi/pulumi": "1.0.0-beta.2"
   }
 }
