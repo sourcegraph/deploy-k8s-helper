@@ -1,6 +1,11 @@
 {
-  "extends": [
-    "config:base"
+  "$schema": "http://json.schemastore.org/renovate",
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "packagePatterns": ["@pulumi/"],
+      "followTag": "latest"
+    }
   ],
   "masterIssue": true,
   "rebaseStalePrs": true
