@@ -71,10 +71,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@pulumi/gcp@1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-1.0.0-beta.1.tgz#5c032dfec8119e89133f6c6e931cda29ad6e24ab"
-  integrity sha512-byzg1fAdcqZDtI3QFbveQJh5DsgVOvkXuAsg0VkExeiIahOTrleippJHThuJ3xmtdq8HIS+bsUEaHt2aOAhZOQ==
+"@pulumi/gcp@1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-1.0.0-rc.1.tgz#5ce0bbee102eb881d53705fb5c2c376ee59b0215"
+  integrity sha512-XXoOi0/4MQ9TNPJpWncDwHDdmGwBRXfxozqOOArVncl11EJORlvcZuJkxpsSm4Y+gh2Pr6+RURk50rfOeJhVgg==
   dependencies:
     "@pulumi/pulumi" "^1.0.0-beta"
     "@types/express" "^4.16.0"
