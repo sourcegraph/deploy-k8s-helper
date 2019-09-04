@@ -96,27 +96,7 @@
     shell-quote "^1.6.1"
     tmp "^0.0.33"
 
-"@pulumi/pulumi@1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-1.0.0-rc.1.tgz#f04dbd8506d13502e217b8273a44d0ef98bafd48"
-  integrity sha512-eapuDr05WIC5qvGsRlTUBc/o5LPpUGIo/eWDVxM9OjqbX7kfWDWl5jSXzJet2ZyKd0oMYx+asubz0JnQ8ib64w==
-  dependencies:
-    "@pulumi/query" "^0.3.0"
-    deasync "^0.1.15"
-    google-protobuf "^3.5.0"
-    grpc "1.21.1"
-    minimist "^1.2.0"
-    normalize-package-data "^2.4.0"
-    protobufjs "^6.8.6"
-    read-package-tree "^5.3.1"
-    require-from-string "^2.0.1"
-    semver "^6.1.0"
-    source-map-support "^0.4.16"
-    ts-node "^7.0.0"
-    typescript "^3.0.0"
-    upath "^1.1.0"
-
-"@pulumi/pulumi@^1.0.0":
+"@pulumi/pulumi@1.0.0", "@pulumi/pulumi@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-1.0.0.tgz#fafabd0cb145592b277224694ee55baa02de12cb"
   integrity sha512-8Cnfri5iIrsZrFWuNs7vX2B4nRRmBz7vOkaF92oTeKOt2J3vcW0u9Yi1XOnMlG5CSUIDt4tVdf66QyIclh8r/Q==
