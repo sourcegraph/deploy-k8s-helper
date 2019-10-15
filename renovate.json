@@ -3,6 +3,7 @@
   "extends": ["config:base"],
   "packageRules": [
     {
+      "groupName": "Pulumi NPM packages",
       "packagePatterns": ["@pulumi/"],
       "followTag": "latest"
     }
