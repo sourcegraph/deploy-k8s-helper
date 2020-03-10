@@ -80,47 +80,24 @@
     "@types/express" "^4.16.0"
     read-package-json "^2.0.13"
 
-"@pulumi/kubernetes@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-1.3.1.tgz#0627bb09efbefde61dc34facb2acb1206d2d7302"
-  integrity sha512-wRfuQynW211icc/3cuOKsdvo/taAmRS1x02p2TjHP1VJH6LZ3fIjpAfLd0ct+mUkLV1xnRWXfeKKlrzzri+JaQ==
+"@pulumi/kubernetes@1.5.6":
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-1.5.6.tgz#e3a7f380a0baef56648b0c0363ec381478bdd555"
+  integrity sha512-m3YS5d70R0OCsskI/0uukSEcpo3w4dI+gVaYU4vbfY8zFBYHqoJHr1PM+lTNq7GQm5PVtg1mOgRf8lGfvYL5/A==
   dependencies:
-    "@pulumi/pulumi" "1.5.0-alpha.1572979668"
+    "@pulumi/pulumi" "^1.11.0"
     "@types/glob" "^5.0.35"
-    "@types/js-yaml" "^3.11.2"
     "@types/node-fetch" "^2.1.4"
     "@types/tmp" "^0.0.33"
     glob "^7.1.2"
-    js-yaml "^3.12.0"
     node-fetch "^2.3.0"
     shell-quote "^1.6.1"
     tmp "^0.0.33"
 
-"@pulumi/pulumi@1.5.0-alpha.1572979668":
-  version "1.5.0-alpha.1572979668"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-1.5.0-alpha.1572979668.tgz#831a1006854a93d612292856b114f67c8e29d1b6"
-  integrity sha512-ZOwE3sdCsxy1XGSbB6caQaJorKfxHkoEyT9KVo8dmOSmpoH6hCOioN2fgRZuAO8f4oSCqjypo4v65brWS86H9w==
-  dependencies:
-    "@pulumi/query" "^0.3.0"
-    callback-to-async-iterator "^1.1.1"
-    deasync "^0.1.15"
-    google-protobuf "^3.5.0"
-    grpc "1.21.1"
-    minimist "^1.2.0"
-    normalize-package-data "^2.4.0"
-    protobufjs "^6.8.6"
-    read-package-tree "^5.3.1"
-    require-from-string "^2.0.1"
-    semver "^6.1.0"
-    source-map-support "^0.4.16"
-    ts-node "^7.0.0"
-    typescript "^3.0.0"
-    upath "^1.1.0"
-
-"@pulumi/pulumi@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-1.6.0.tgz#f9a9d7cdfa515018e558f48c541b10d974111da3"
-  integrity sha512-2aUibBsFT9rpE+5ZfqGGdUlNAVrlP79DWP0hm02h0toY/PzP1A+EyylUDhvt/3tbWN4Ejizwysi+WR08MtNBiw==
+"@pulumi/pulumi@1.12.0", "@pulumi/pulumi@^1.11.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-1.12.0.tgz#7dff6771192cf20e8b282c0c23a649eb5e659632"
+  integrity sha512-EW/UNLFEVXspzDQnxPMCrXNaZ0gb2eHtYekSlBosXLJdWAGKPAy/a7IvVEA3E91f01Chi1JnUjGV8+cBDuxefw==
   dependencies:
     "@pulumi/query" "^0.3.0"
     deasync "^0.1.15"
@@ -133,8 +110,8 @@
     require-from-string "^2.0.1"
     semver "^6.1.0"
     source-map-support "^0.4.16"
-    ts-node "^7.0.0"
-    typescript "=3.6.3"
+    ts-node "^7.0.1"
+    typescript "~3.7.3"
     upath "^1.1.0"
 
 "@pulumi/pulumi@^1.0.0":
@@ -220,11 +197,6 @@
     "@types/events" "*"
     "@types/minimatch" "*"
     "@types/node" "*"
-
-"@types/js-yaml@^3.11.2":
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.0.tgz#3494ce97358e2675e24e97a747ec23478eeaf8b6"
-  integrity sha512-UGEe/6RsNAxgWdknhzFZbCxuYc5I7b/YEKlfKbo+76SM8CJzGs7XKCj7zyugXViRbKYpXhSXhCYVQZL5tmDbpQ==
 
 "@types/long@*", "@types/long@^4.0.0":
   version "4.0.0"
@@ -390,13 +362,6 @@ bytebuffer@~5:
   integrity sha1-WC7qSxqHO20CCkjVjfhfC7ps/d0=
   dependencies:
     long "~3"
-
-callback-to-async-iterator@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/callback-to-async-iterator/-/callback-to-async-iterator-1.1.1.tgz#110adcde834589bee475415baf0123b6a541c398"
-  integrity sha512-w5uOapjkp/CEizuvBkLl7JyHlQNlxAT7LSr9g4vFjg5AEM5TJvaajjKkgs4kcFFm0fNqFX9D0zEIotllXvNC1Q==
-  dependencies:
-    iterall "^1.0.0"
 
 camelcase-keys@^4.0.0:
   version "4.2.0"
@@ -828,23 +793,10 @@ isarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
 
-iterall@^1.0.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
-  integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
-
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
-
-js-yaml@^3.12.0:
-  version "3.12.1"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.1.tgz#295c8632a18a23e054cf5c9d3cecafe678167600"
-  integrity sha512-um46hB9wNOKlwkHgiuyEVAybXBjwFUV0Z/RaHJblRd9DXltue9FTYvzCr9ErQrK9Adz5MU4gHWVaNUfdmrC8qA==
-  dependencies:
-    argparse "^1.0.7"
-    esprima "^4.0.0"
 
 js-yaml@^3.13.1:
   version "3.13.1"
@@ -1613,7 +1565,7 @@ trim-newlines@^2.0.0:
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-2.0.0.tgz#b403d0b91be50c331dfc4b82eeceb22c3de16d20"
   integrity sha1-tAPQuRvlDDMd/EuC7s6yLD3hbSA=
 
-ts-node@^7.0.0:
+ts-node@^7.0.0, ts-node@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-7.0.1.tgz#9562dc2d1e6d248d24bc55f773e3f614337d9baf"
   integrity sha512-BVwVbPJRspzNh2yfslyT1PSbl5uIk03EZlb493RKHN4qej/D06n1cEhjlOJG69oFsE7OT8XjpTUcYf6pKTLMhw==
@@ -1663,15 +1615,15 @@ tsutils@^2.29.0:
   dependencies:
     tslib "^1.8.1"
 
-typescript@=3.6.3:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.3.tgz#fea942fabb20f7e1ca7164ff626f1a9f3f70b4da"
-  integrity sha512-N7bceJL1CtRQ2RiG0AQME13ksR7DiuQh/QehubYcghzv20tnh+MQnQIuJddTmsbqYj+dztchykemz0zFzlvdQw==
-
 typescript@^3.0.0:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3.tgz#f1657fc7daa27e1a8930758ace9ae8da31403221"
   integrity sha512-Y21Xqe54TBVp+VDSNbuDYdGw0BpoR/Q6wo/+35M8PAU0vipahnyduJWirxxdxjsAkS7hue53x2zp8gz7F05u0A==
+
+typescript@~3.7.3:
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.5.tgz#0692e21f65fd4108b9330238aac11dd2e177a1ae"
+  integrity sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
 
 upath@^1.1.0:
   version "1.1.0"
