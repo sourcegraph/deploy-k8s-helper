@@ -16,7 +16,7 @@
     "@types/node": "latest",
     "opn-cli": "4.1.0",
     "prettier": "2.0.4",
-    "tslint": "5.20.1",
+    "tslint": "6.1.1",
     "tslint-config-prettier": "1.18.0"
   },
   "dependencies": {
