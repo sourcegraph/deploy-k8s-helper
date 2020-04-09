@@ -10,7 +10,7 @@
     "web": "opn $(pulumi stack output gcpURL)"
   },
   "devDependencies": {
-    "@sourcegraph/prettierrc": "3.0.1",
+    "@sourcegraph/prettierrc": "3.0.3",
     "@types/node": "latest",
     "opn-cli": "4.1.0",
     "prettier": "2.0.4",
