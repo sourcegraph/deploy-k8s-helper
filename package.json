@@ -1,0 +1,27 @@
+{
+  "name": "sg-deploy-k8s-helper",
+  "scripts": {
+    "up": "pulumi up",
+    "postup": "yarn auth",
+    "destroy": "pulumi destroy",
+    "predestroy": "yarn deauth",
+    "auth": "$(pulumi stack output gcloudAuthCommand)",
+    "deauth": "kubectl config delete-context $(pulumi stack output clusterContext)",
+    "web": "opn $(pulumi stack output gcpURL)",
+    "prettier": "prettier '**/{*.{js?(on),ts?(x),graphql,md,scss},.*.js?(on)}' --write --list-different --config prettier.config.js",
+    "prettier-check": "yarn -s run prettier --write=false"
+  },
+  "devDependencies": {
+    "@sourcegraph/prettierrc": "3.0.3",
+    "@types/node": "latest",
+    "opn-cli": "4.1.0",
+    "prettier": "2.0.4",
+    "tslint": "5.20.1",
+    "tslint-config-prettier": "1.18.0"
+  },
+  "dependencies": {
+    "@pulumi/gcp": "2.12.0",
+    "@pulumi/kubernetes": "1.6.0",
+    "@pulumi/pulumi": "1.14.0"
+  }
+}

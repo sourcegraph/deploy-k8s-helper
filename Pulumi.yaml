@@ -1,0 +1,3 @@
+name: sourcegraph-deploy-kubernetes-helper
+runtime: nodejs
+description: A small helper program to aid in creating a test cluster for https://github.com/sourcegraph/deploy-sourcegraph.
