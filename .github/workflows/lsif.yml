@@ -7,6 +7,8 @@ jobs:
     container: sourcegraph/lsif-node
     steps:
       - uses: actions/checkout@v1
+      - name: Install build dependencies
+        run: apk --no-cache add python g++ make git
       - name: Install dependencies
         run: yarn install
       - name: Generate LSIF data
