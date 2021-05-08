@@ -1,29 +1,29 @@
-# deploy-k8s-helper 
+# deploy-k8s-helper
 
-A small helper program to aid in creating a test cluster for https://github.com/sourcegraph/deploy-sourcegraph. 
+A small helper program to aid in creating a test cluster for https://github.com/sourcegraph/deploy-sourcegraph.
 
-## Prerequisites 
+## Prerequisites
 
 - [Pulumi](https://pulumi.io/quickstart/install.html)
-    - Run `pulumi login` after installation
+  - Run `pulumi login` after installation
 - [Yarn](https://yarnpkg.com/en/)
 - GCP access to the ["Sourcegraph Auxiliary" (sourcegraph-server) GCP project](https://console.cloud.google.com/kubernetes/list?project=sourcegraph-server)
-    - Run `gcloud auth application-default login` to fetch the necessary credentials for Pulumi to use 
+  - Run `gcloud auth application-default login` to fetch the necessary credentials for Pulumi to use
 - https://github.com/sourcegraph/deploy-sourcegraph checked out on your local machine
-    - deploy-k8s-helper reads the contents of that directory. Make sure your that your checkout is up-to-date!
+  - deploy-k8s-helper reads the contents of that directory. Make sure your that your checkout is up-to-date!
 
 ### Configuration
 
 See [config.ts](config.ts) for more information, but you **must** set the following configuration values via `pulumi config set <NAME> <VALUE>`
 
-- `gcloudEmail` -  The email that you use to sign in to our GCP project.
-    - example: geoffrey@sourcegraph.com
+- `gcloudEmail` - The email that you use to sign in to our GCP project.
+  - example: geoffrey@sourcegraph.com
 - `deploySourcegraphRoot` - The path to the root of your https://github.com/sourcegraph/deploy-sourcegraph checkout.
-    - example: /Users/ggilmore/dev/go/src/github.com/sourcegraph/deploy-sourcegraph
+  - example: /Users/ggilmore/dev/go/src/github.com/sourcegraph/deploy-sourcegraph
 
-## Usage 
+## Usage
 
-Run `yarn` so that you install all the necessary dependencies. 
+Run `yarn` so that you install all the necessary dependencies.
 
 - `yarn up`: creates a new GKE cluster and fetches the necessary credentials
 - `yarn destroy`: deletes a GKE cluster that was previously created with `yarn up`
@@ -57,7 +57,7 @@ Solution: Pick another zone to use from https://cloud.google.com/compute/docs/re
 
 ### (ingress-nginx) Cannot read property 'status' of undefined
 
-This happens if you're trying to deploy a pre-`3.x` release of https://github.com/sourcegraph/deploy-sourcegraph/ (which didn't have `nginx-ingress`). 
+This happens if you're trying to deploy a pre-`3.x` release of https://github.com/sourcegraph/deploy-sourcegraph/ (which didn't have `nginx-ingress`).
 
 Example:
 

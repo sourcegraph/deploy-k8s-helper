@@ -14,13 +14,13 @@ export const clusterConfig = {
      * The number of nodes to create in this cluster.
      * Defaults to 4.
      */
-    nodeCount: config.getNumber('nodeCount') || 4,
+    nodeCount: config.getNumber('nodeCount') || 3,
 
     /**
      * The name of a Google Compute Engine machine type.
      * Defaults to n1-standard-8.
      */
-    machineType: config.get('machineType') || 'n1-standard-8',
+    machineType: config.get('machineType') || 'n1-standard-16',
 }
 
 export const gcloudConfig = {
@@ -47,4 +47,6 @@ export const gcloudConfig = {
  * The path to the root of your sourcegraph/deploy-sourcegraph checkout.
  * Example: /Users/ggilmore/dev/go/src/github.com/sourcegraph/deploy-sourcegraph
  */
-export const deploySourcegraphRoot = config.require('deploySourcegraphRoot')
+export const deploySourcegraphLocalRoot = config.get('deploySourcegraphLocalRoot')
+
+export const deploySourcegraphRef = config.get('deploySourcegraphRef') || 'master'

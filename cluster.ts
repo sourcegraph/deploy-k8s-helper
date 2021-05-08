@@ -19,7 +19,6 @@ const cluster = new gcp.container.Cluster(name, {
     project: gcloudConfig.project,
 
     initialNodeCount: clusterConfig.nodeCount,
-    removeDefaultNodePool: true,
 
     nodeConfig: {
         diskType: 'pd-ssd',
