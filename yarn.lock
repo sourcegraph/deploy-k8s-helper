@@ -100,19 +100,19 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@pulumi/gcp@5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-5.2.0.tgz#bd87b14328e29a9b6ce2a4b1921a756f82ce670e"
-  integrity sha512-NDGPecXKJOyiu0kIA98FmkCb/HWtJf1YGtj6jTtme75TVVdvbGO1OYjCPsR2B+i2aZ1jccU0w9jc/rMsg0h18A==
+"@pulumi/gcp@5.11.0":
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-5.11.0.tgz#7b530c5a8627825c738dfbe70b0b27e5e65ddf35"
+  integrity sha512-pCrl4Kf4Ut6aWymwCu9+g7loJ2F/uwIqyWc3g57Wcn8oaPjxp9o/ococeyoJyVbw/FrU/JHPUB/u6BAprWpjIg==
   dependencies:
     "@pulumi/pulumi" "^3.0.0"
     "@types/express" "^4.16.0"
     read-package-json "^2.0.13"
 
-"@pulumi/kubernetes@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-3.1.1.tgz#e6bbc7883b6b9f9163941d3a7f0e596d211b010d"
-  integrity sha512-kVYBCAPBnzeRzsc/VzW/jF9RQ0fkTUF8hOw7oXa9mJSi/8vXcHo5Z46a2+VrKR3kay2cJ7Wuv6xtKHpcqORU2A==
+"@pulumi/kubernetes@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-3.5.0.tgz#62c89588f948bd85945d83636e995a6a0be44dfb"
+  integrity sha512-W1UtRPu9RH6YAOQ1ZJa4IQrugmGJjfVKr69MRSyxw6tRgSC/HR6ZeqP4KGP+qb5bkTvecPBHng2VfLAACgKGUw==
   dependencies:
     "@pulumi/pulumi" "^3.0.0"
     "@types/glob" "^5.0.35"
@@ -123,7 +123,28 @@
     shell-quote "^1.6.1"
     tmp "^0.0.33"
 
-"@pulumi/pulumi@3.2.1", "@pulumi/pulumi@^3.0.0":
+"@pulumi/pulumi@3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.6.1.tgz#97db34c49a853d9c208edd8ca5d823d7aa5a30cb"
+  integrity sha512-oHMXXh2szmsmDW+wfJMNY7cjuW/reCCBuOc760/vDL7+DkvYX0Id9ElEVPXZM8JgxfC2L2HGePtEKI6kCDEtqA==
+  dependencies:
+    "@grpc/grpc-js" "^1.2.7"
+    "@logdna/tail-file" "^2.0.6"
+    "@pulumi/query" "^0.3.0"
+    google-protobuf "^3.5.0"
+    js-yaml "^3.14.0"
+    minimist "^1.2.0"
+    normalize-package-data "^2.4.0"
+    protobufjs "^6.8.6"
+    read-package-tree "^5.3.1"
+    require-from-string "^2.0.1"
+    semver "^6.1.0"
+    source-map-support "^0.4.16"
+    ts-node "^7.0.1"
+    typescript "~3.7.3"
+    upath "^1.1.0"
+
+"@pulumi/pulumi@^3.0.0":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.2.1.tgz#c7c979aa29d595ea691426b78d44bdc6b9e8d793"
   integrity sha512-fFkFEUHSM3gCV+TdwPyKuJOS5EsCzjYVfE6Qyz4UR+qRmExxNkOBX73Uc+BkD79vpqs4B9mPNlpPC9UHGBDvLg==
