@@ -3,3 +3,4 @@ steps:
     command: .buildkite/prettier-check.sh
   - label: ':lock: security - checkov'
     command: .buildkite/ci-checkov.sh
+    agents: { queue: standard }
