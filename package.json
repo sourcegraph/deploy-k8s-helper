@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@sourcegraph/prettierrc": "3.0.3",
-    "@types/fs-extra": "^9.0.11",
+    "@types/fs-extra": "9.0.13",
     "@types/node": "latest",
     "opn-cli": "4.1.0",
     "prettier": "2.0.4",
