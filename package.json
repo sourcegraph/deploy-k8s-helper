@@ -24,7 +24,7 @@
     "@pulumi/gcp": "5.2.0",
     "@pulumi/kubernetes": "3.1.1",
     "@pulumi/pulumi": "3.2.1",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "10.1.0",
     "simple-git": "^2.38.0"
   }
 }
