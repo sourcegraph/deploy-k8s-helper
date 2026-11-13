@@ -1,13 +1,4 @@
 {
-  "$schema": "http://json.schemastore.org/renovate",
-  "extends": ["config:base"],
-  "packageRules": [
-    {
-      "groupName": "Pulumi NPM packages",
-      "packagePatterns": ["@pulumi/"],
-      "followTag": "latest"
-    }
-  ],
-  "masterIssue": true,
-  "rebaseStalePrs": true
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabled": false
 }
